@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @SWG\Swagger(schemes={"http"}, basePath="/v1", @SWG\Info(version="1.0.0", title="Api Exemplo API"))
+ */
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -13,6 +17,11 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+/**
+ * @SWG\Get(path="/produtos", summary="Lista todos os produtos", produces={"application/json"}, @SWG\Response(response="default", description="successful operation"), 
+ * @SWG\Parameter(description="Pesquisa", in="query", name="like", required=false, type="string"))
+ */
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
